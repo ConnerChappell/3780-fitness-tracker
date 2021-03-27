@@ -11,7 +11,8 @@
     </div>
 
     <workout-history 
-    :workouts="sessions" 
+    :workouts="sessions"
+    @delete:session="deleteSession"
     />
 
   </div>
@@ -79,8 +80,21 @@ export default {
 
 <style>
   button {
-    background: #009435;
-    border: 1px solid #009435;
+    background: #000;
+    border: 1px solid #000;
+    margin-right: 10px;
+    transition: all .4s;
+  }
+  button:hover {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+  }
+  button:focus {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+    outline: none;
   }
 
   .small-container {

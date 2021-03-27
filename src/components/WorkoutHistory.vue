@@ -15,7 +15,7 @@
                         <li :key="`exercise-${index}`">Exercise: {{stuff.exercise}}</li>
                         <li :key="`sets-${index}`">Sets: {{stuff.sets}}</li>
                         <li :key="`reps-${index}`">Reps: {{stuff.reps}}</li>
-                        <li :key="`weight-${index}`">Weight: {{stuff.weight}}</li>
+                        <li :key="`weight-${index}`" class="exerciseDivider">Weight: {{stuff.weight}}</li>
                     </template>
                 </div>
                 
@@ -23,13 +23,13 @@
                     <template v-for="(stuff, index) in session.exercises.filter((item) => item.exerciseType === 'endurance')">
                     <li :key="`exercise-${index}`">Exercise: {{stuff.exercise}}</li>
                     <li :key="`distance-${index}`">Distance: {{stuff.distance}}</li>
-                    <li :key="`duration-${index}`">Duration: {{stuff.duration}}</li>
+                    <li :key="`duration-${index}`" class="exerciseDivider">Duration: {{stuff.duration}}</li>
                     </template>
                 </div>
 
                 <div class="editDelete">
                     <button>Edit</button>
-                    <button>Delete</button>
+                    <button @click="$emit('delete:session', session.id)">Delete</button>
                 </div>    
             </ul>
         </div>
@@ -60,7 +60,23 @@ export default {
 </script>
 
 <style>
+    .historyContainer ul {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .workoutDate {
+        font-size: 20px;
+        font-weight: 800;
+        border-bottom: 1px solid #000;
+        max-width: 250px;
+        margin-bottom: 10px;
+    }
     li {
         list-style-type: none;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .exerciseDivider {
+        margin-bottom: 15px;
     }
 </style>
