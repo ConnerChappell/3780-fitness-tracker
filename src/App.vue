@@ -6,6 +6,8 @@
     @add:item="addItem"
     />
 
+    <current-workout />
+
     <workout-history 
     :workouts="sessions"
     @delete:session="deleteSession"
@@ -16,12 +18,14 @@
 
 <script>
 import AddExercise from './components/AddExercise.vue';
-import WorkoutHistory from './components/WorkoutHistory.vue'
+import CurrentWorkout from './components/CurrentWorkout';
+import WorkoutHistory from './components/WorkoutHistory.vue';
 
 export default {
   name: 'App',
   components: {
     AddExercise,
+    CurrentWorkout,
     WorkoutHistory
   },
   data() {
@@ -53,13 +57,13 @@ export default {
           exercises: [
             {
               exerciseType: "endurance",
-              exercise: "Running",
+              exercise: "Run",
               distance: "2 miles",
               duration: "20 minutes",
             },
             {
               exerciseType: "endurance",
-              exercise: "Swimming",
+              exercise: "Swim",
               distance: "10 laps",
               duration: "15 minutes"
             },
@@ -86,6 +90,9 @@ export default {
     margin-bottom: .75rem;
     padding-bottom: .5rem;
     border-bottom: 1px solid #000;
+  }
+  h3 {
+    margin-top: 0;
   }
   button {
     background: #000;

@@ -42,7 +42,7 @@
               <button>Add Exercise</button>
 
               <p v-if="error && submitting" class="errorMessage">❗️Please fill out all required fields</p>
-              <p v-if="success" class="successMessage">✅ Excersise sucessfully added to current workout</p>
+              <p v-if="success" class="successMessage">✅ Exercise sucessfully added to current workout</p>
           </form>
       </div>
 
@@ -76,7 +76,7 @@
               <button>Add Exercise</button>
 
               <p v-if="error && submitting" class="errorMessage">❗️Please fill out all required fields</p>
-              <p v-if="success" class="successMessage">✅ Excersise sucessfully added to current workout</p>
+              <p v-if="success" class="successMessage">✅ Exercise sucessfully added to current workout</p>
           </form>
       </div>
     </div>
