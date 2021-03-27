@@ -1,6 +1,6 @@
 <template>
     <div class="workoutHistory">
-        <h3>Workout History</h3>
+        <h2>Workout History</h2>
 
         <div class="noWorkoutsDisplayed" v-if="workouts.length < 1">
             <p>There are no workouts saved in your history</p>

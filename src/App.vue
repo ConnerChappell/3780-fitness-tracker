@@ -2,13 +2,9 @@
   <div id="app" class="small-container">
     <h1>Fitness Tracker</h1>
 
-    <div>
-      <h3>Date</h3>
-      <p>Please select the type of exercise you would like to add to your current workout</p>
-      <button>Strength</button>
-      <button>Endurance</button>
-      <h3>Current Workout</h3>
-    </div>
+    <add-exercise 
+    @add:item="addItem"
+    />
 
     <workout-history 
     :workouts="sessions"
@@ -19,11 +15,13 @@
 </template>
 
 <script>
+import AddExercise from './components/AddExercise.vue';
 import WorkoutHistory from './components/WorkoutHistory.vue'
 
 export default {
   name: 'App',
   components: {
+    AddExercise,
     WorkoutHistory
   },
   data() {
@@ -73,12 +71,17 @@ export default {
     };
   },
   methods() {
-
+    // deleteSession(id) {
+    //   this.sessions = this.sessions.filter((session) => session.id !== id)
+    // }
   }
 }
 </script>
 
 <style>
+  h1 {
+    font-size: 75px;
+  }
   button {
     background: #000;
     border: 1px solid #000;
