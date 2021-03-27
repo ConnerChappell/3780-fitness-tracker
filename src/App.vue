@@ -70,10 +70,10 @@ export default {
       adding: false,
     };
   },
-  methods() {
-    // deleteSession(id) {
-    //   this.sessions = this.sessions.filter((session) => session.id !== id)
-    // }
+  methods: {
+    deleteSession(id) {
+      this.sessions = this.sessions.filter((session) => session.id !== id)
+    }
   }
 }
 </script>
@@ -81,6 +81,11 @@ export default {
 <style>
   h1 {
     font-size: 75px;
+  }
+  h2 {
+    margin-bottom: .75rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #000;
   }
   button {
     background: #000;
@@ -99,7 +104,6 @@ export default {
     border: 1px solid #000;
     outline: none;
   }
-
   .small-container {
     max-width: 680px;
   }

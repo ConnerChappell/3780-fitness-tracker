@@ -67,8 +67,6 @@ export default {
     .workoutDate {
         font-size: 20px;
         font-weight: 800;
-        border-bottom: 1px solid #000;
-        max-width: 250px;
         margin-bottom: 10px;
     }
     li {
